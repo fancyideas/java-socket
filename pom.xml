@@ -17,17 +17,9 @@
     </properties>
 
     <build>
-        <finalName>client</finalName>
+        <finalName>server</finalName>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                    </configuration>
-                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
@@ -41,7 +33,7 @@
                                 <addClasspath>true</addClasspath>
                                 <!--生成的manifest中classpath的前缀，因为要把第三方jar放到lib目录下， 所以classpath的前缀是lib/-->
                                 <classpathPrefix>lib/</classpathPrefix>
-                                <mainClass>com.github.fancyideas.charthome.client.ChatClient</mainClass>
+                                <mainClass>com.github.fancyideas.charthome.server.ChatServer</mainClass>
                             </manifest>
                         </archive>
                         <!--过滤掉不希望包含在jar中的文件-->

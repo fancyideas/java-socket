@@ -40,8 +40,8 @@ public class ChatServer {
         if (!connectedCLients.containsKey(port)) {
             return;
         }
-        connectedCLients.remove(port);
         connectedCLients.get(port).close();
+        connectedCLients.remove(port);
         String clientConnectMsg = MessageFormat.format("客户端[{0}]:已经断开", port);
         System.out.println(clientConnectMsg);
     }
