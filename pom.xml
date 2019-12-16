@@ -8,7 +8,16 @@
     <artifactId>java-socket</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
     <build>
+        <finalName>client</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -32,7 +41,7 @@
                                 <addClasspath>true</addClasspath>
                                 <!--生成的manifest中classpath的前缀，因为要把第三方jar放到lib目录下， 所以classpath的前缀是lib/-->
                                 <classpathPrefix>lib/</classpathPrefix>
-                                <mainClass>com.github.fancyideas.Client</mainClass>
+                                <mainClass>com.github.fancyideas.charthome.client.ChatClient</mainClass>
                             </manifest>
                         </archive>
                         <!--过滤掉不希望包含在jar中的文件-->
