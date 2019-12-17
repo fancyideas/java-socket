@@ -3,7 +3,7 @@ package com.github.fancyideas;
 import java.io.*;
 import java.net.Socket;
 
-public class Client {
+public class SimpleClient {
     public static void main(String[] args) throws IOException {
         final String QUIT = "quit";
         final String HOST = "127.0.0.1";

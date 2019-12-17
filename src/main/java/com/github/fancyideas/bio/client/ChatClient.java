@@ -1,6 +1,4 @@
-package com.github.fancyideas.charthome.client;
-
-import com.github.fancyideas.charthome.server.ChatHandler;
+package com.github.fancyideas.bio.client;
 
 import java.io.*;
 import java.net.Socket;

@@ -1,6 +1,4 @@
-package com.github.fancyideas.charthome.server;
-
-import jdk.jfr.events.SocketReadEvent;
+package com.github.fancyideas.bio.server;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -8,14 +6,19 @@ import java.net.Socket;
 import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ChatServer {
     private final int PORT = 8888;
     private final String QUIT = "quit";
     private ServerSocket serverSocket;
     private Map<Integer, Writer> connectedCLients;
+    // 线程池
+    private ExecutorService executorService;
 
     public ChatServer() {
+        executorService = Executors.newFixedThreadPool(10);
         this.connectedCLients = new HashMap<>();
     }
 
@@ -64,7 +67,8 @@ public class ChatServer {
             System.out.println("服务器启动[" + PORT + "]");
             while (true) {
                 Socket socket = serverSocket.accept();
-                new Thread(new ChatHandler(this, socket)).start();
+                // 伪异步编程模型
+                executorService.execute(new ChatHandler(this, socket));
             }
         } catch (IOException e) {
             e.printStackTrace();

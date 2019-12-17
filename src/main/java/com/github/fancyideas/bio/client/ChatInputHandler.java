@@ -1,4 +1,4 @@
-package com.github.fancyideas.charthome.client;
+package com.github.fancyideas.bio.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;

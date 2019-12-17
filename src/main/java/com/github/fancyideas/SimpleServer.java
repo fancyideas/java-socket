@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.MessageFormat;
 
-public class Server {
+public class SimpleServer {
     public static void main(String[] args) throws IOException {
         final int PORT = 8888;
         final String QUIT = "quit";
