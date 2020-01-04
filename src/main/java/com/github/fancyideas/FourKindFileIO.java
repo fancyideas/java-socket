@@ -8,7 +8,7 @@ interface FileCopyRunner {
     void copyFile(File source, File target);
 }
 
-public class SimpleChannel {
+public class FourKindFileIO {
     private final int ROUNDS = 5;
 
     private static void benchmark(FileCopyRunner fileCopyRunner,
